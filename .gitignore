@@ -1,0 +1,22 @@
+# Code Composer Studio generated build output
+**/Debug/
+**/Release/
+
+# Generated compiler/linker files
+*.d
+*.map
+*.out
+*.elf
+*.hex
+*.bin
+*.lst
+*_linkInfo.xml
+ccsObjs.opt
+
+# CCS workspace-specific state
+.metadata/
+.theia/
+
+# Operating-system clutter
+.DS_Store
+Thumbs.db
