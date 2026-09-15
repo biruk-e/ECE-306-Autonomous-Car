@@ -1,4 +1,4 @@
-#include  "inc\functions.h"
+#include  "inc\premade\functions.h"
 #include  "msp430.h"
 #include  "inc\macros.h"
 #include  "inc\globals.h"

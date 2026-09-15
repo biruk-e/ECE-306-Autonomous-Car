@@ -10,13 +10,13 @@
 //------------------------------------------------------------------------------
 #include  "msp430.h"
 #include  <string.h>
-#include  "inc\functions.h"
-#include  "inc\LCD.h"
+#include  "inc\premade\functions.h"
+#include  "inc\premade\LCD.h"
 #include  "inc\ports.h"
 #include  "inc\macros.h"
 #include  "inc\init.h"
 #include  "inc\globals.h"
-#include  "inc\carlson.h"
+#include  "inc\premade\carlson.h"
 
 void main(void){
 
