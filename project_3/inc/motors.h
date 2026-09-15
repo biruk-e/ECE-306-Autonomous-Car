@@ -24,6 +24,16 @@
 #define FORWARD                (0x00)
 #define REVERSE                (0x01)
 
-void go_forward();
+void all_wheels_off();
 
-void go_backward();
+void right_wheel_forward();
+
+void right_wheel_backward();
+
+void right_wheel_off();
+
+void left_wheel_forward();
+
+void left_wheel_backward();
+
+void left_wheel_off();

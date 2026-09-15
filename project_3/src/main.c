@@ -17,6 +17,7 @@
 #include  "inc\init.h"
 #include  "inc\globals.h"
 #include  "inc\premade\carlson.h"
+#include  "inc\motors.h"
 
 void main(void){
 
@@ -47,7 +48,7 @@ void main(void){
   display_changed = TRUE;
 //  Display_Update(0,0,0,0);
 
-  wheel_move = 0;
+  wheel_move = 1;
   forward = TRUE;
 
 //------------------------------------------------------------------------------
@@ -58,6 +59,17 @@ void main(void){
     Switches_Process();                // Check for switch state change
     Display_Process();                 // Update Display
     P3OUT ^= TEST_PROBE;               // Change State of TEST_PROBE OFF
+    if (wheel_move == 0) {
+      all_wheels_off();                // Turn all wheels off
+    }
+
+    if (wheel_move == 1) {
+      if (forward) {
+        right_wheel_forward();
+      } else if (!forward) {
+        right_wheel_off();
+      }
+    }
   }
 //------------------------------------------------------------------------------
 
