@@ -66,8 +66,10 @@ void main(void){
     if (wheel_move == 1) {
       if (forward) {
         right_wheel_forward();
+        left_wheel_forward();
       } else if (!forward) {
         right_wheel_off();
+        left_wheel_off();
       }
     }
   }
