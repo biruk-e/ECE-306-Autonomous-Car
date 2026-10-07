@@ -19,4 +19,4 @@ ccsObjs.opt
 
 # Operating-system clutter
 .DS_Store
-Thumbs.db
+Thumbs.db*.md
