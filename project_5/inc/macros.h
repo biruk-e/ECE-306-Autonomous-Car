@@ -34,3 +34,7 @@
 #define TRIANGLE_CCW_TURN_TIME  (600)
 #define ONE_CW_CIRCLE_TIME      (3300)
 #define ONE_CCW_CIRCLE_TIME     (3400)
+
+// Timer related macros
+#define TB0CCR0_PERIOD          (125 - 1) // Achieves a 1 ms tick time together with ID__8 and TBIDEX__8    
+#define TB3CCR0_PERIOD          (100)

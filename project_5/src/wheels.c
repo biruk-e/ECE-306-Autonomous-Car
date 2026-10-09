@@ -14,6 +14,7 @@ unsigned char cw_turn_calib[2] = {17, 3};
 unsigned char ccw_turn_calib[2] = {1, 19};
 unsigned int movement_ticks = 0;
 
+/*
 void wheels_process() {
     // TODO: Keep track of time and update wheels_c
     if (time_changed) {
@@ -22,6 +23,8 @@ void wheels_process() {
     }
     if (wheels_counter >= 20) wheels_counter = 0;
 }
+*/
+
 /*
 
 switch(current_shape) {

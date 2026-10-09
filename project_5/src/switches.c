@@ -73,6 +73,7 @@ void sw2_process() {
     }
 }
 
+/*
 void switches_process() {
     if (time_changed) {
         sw1_process();
@@ -80,5 +81,7 @@ void switches_process() {
     }
     
 }
+
+*/
 
 

@@ -1,6 +1,6 @@
 #include  "msp430.h"
 #include  <string.h>
-#include  "inc\premade\functions.h"
+#include  "inc\functions.h"
 #include  "inc\ports.h"
 #include  "inc\macros.h"
 #include  "inc\init.h"
@@ -8,7 +8,7 @@
 #include  "inc\motors.h"
 #include  "inc\switches.h"
 #include  "inc\wheels.h"
-#include  "inc\time.h"
+#include  "inc\timers.h"
 
 void main(void){
 
@@ -22,8 +22,9 @@ void main(void){
 
   while(ALWAYS) {
     display_process();
-    time_process();
-    wheels_process();
-    switches_process();
+    //time_process();
+    //wheels_process();
+    //switches_process();
   }
 }
+

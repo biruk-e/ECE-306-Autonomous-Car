@@ -6,7 +6,7 @@
 //  Jan 2021
 //  Built with IAR Embedded Workbench Version: V7.12.1
 // ------------------------------------------------------------------------------
-#include  "inc\premade\functions.h"
+#include  "inc\functions.h"
 #include  "msp430.h"
 #include  "inc\macros.h"
 #include  "inc\globals.h"

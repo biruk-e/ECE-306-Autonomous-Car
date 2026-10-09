@@ -20,7 +20,7 @@ void Init_Ports(void) {
 
     // Release GPIO pins from high-impedance mode only after all pins
     // have been configured to their intended initial states.
-    PM5CTL0 &= ~LOCKLPM5;
+    PM5CTL0 &= ~LOCKLPM5;   
     
 }
 
@@ -159,29 +159,29 @@ void Init_Port6(void) {
     P6DIR   |= LCD_BACKLITE;    // Set P6DIR.0 -- Configure P6.0 as output
     
     // R_FORWARD Configuration: P6.1
-    P6SEL0 &= ~R_FORWARD;   // Clear P6SEL0.1 -- Select GPIO mode (will change to PWM in the future)
-    P6SEL1 &= ~R_FORWARD;   // Clear P6SEL1.1 -- Select GPIO mode (will change to PWM in the future)
+    P6SEL0 |= R_FORWARD;    // Set P6SEL0.1 -- Select TB3.2 function
+    P6SEL1 &= ~R_FORWARD;   // Clear P6SEL1.1 -- Select TB3.2 function
     P6OUT  &= ~R_FORWARD;   // Clear P6OUT.1 -- R_FORWARD initially LOW
     P6REN  &= ~R_FORWARD;   // Clear P6REN.1 -- Disable PUPD resistor
     P6DIR  |= R_FORWARD;    // Set P6DIR.1 -- Configure P6.1 as output
     
     // R_REVERSE Configuration: P6.2
-    P6SEL0 &= ~R_REVERSE;   // Clear P6SEL0.2 -- Select GPIO mode (will change to PWM in the future)
-    P6SEL1 &= ~R_REVERSE;   // Clear P6SEL1.2 -- Select GPIO mode (will change to PWM in the future)
+    P6SEL0 |= R_REVERSE;    // Set P6SEL0.2 -- Select TB3.3 function
+    P6SEL1 &= ~R_REVERSE;   // Clear P6SEL1.2 -- Select TB3.3 function
     P6OUT  &= ~R_REVERSE;   // Clear P6OUT.2 -- R_REVERSE initially LOW
     P6REN  &= ~R_REVERSE;   // Clear P6REN.2 -- Disable PUPD resistor
     P6DIR  |= R_REVERSE;    // Set P6DIR.2 -- Configure P6.2 as output
 
     // L_FORWARD Configuration: P6.3
-    P6SEL0 &= ~L_FORWARD;   // Clear P6SEL0.3 -- Select GPIO mode (will change to PWM in the future)
-    P6SEL1 &= ~L_FORWARD;   // Clear P6SEL1.3 -- Select GPIO mode (will change to PWM in the future)
+    P6SEL0 |= L_FORWARD;    // Clear P6SEL0.3 -- Select TB3.4 function
+    P6SEL1 &= ~L_FORWARD;   // Clear P6SEL1.3 -- Select TB3.4 function
     P6OUT  &= ~L_FORWARD;   // Clear P6OUT.3 -- L_FORWARD initially LOW
     P6REN  &= ~L_FORWARD;   // Clear P6REN.3 -- Disable PUPD resistor
     P6DIR  |= L_FORWARD;    // Set P6DIR.3 -- Configure P6.3 as output
 
     // L_REVERSE Configuration: P6.4
-    P6SEL0 &= ~L_REVERSE;   // Clear P6SEL0.4 -- Select GPIO mode (will change to PWM in the future)
-    P6SEL1 &= ~L_REVERSE;   // Clear P6SEL1.4 -- Select GPIO mode (will change to PWM in the future)
+    P6SEL0 |= L_REVERSE;    // Set P6SEL0.4 -- Select TB3.5 function
+    P6SEL1 &= ~L_REVERSE;   // Clear P6SEL1.4 -- Select TB3.5 function
     P6OUT  &= ~L_REVERSE;   // Clear P6OUT.4 -- L_REVERSE initially LOW
     P6REN  &= ~L_REVERSE;   // Clear P6REN.4 -- Disable PUPD resistor
     P6DIR  |= L_REVERSE;    // Set P6DIR.4 -- Configure P6.4 as output

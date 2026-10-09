@@ -17,10 +17,7 @@ extern volatile unsigned char update_display;
 extern volatile unsigned int update_display_count;
 
 // globals for time
-extern volatile unsigned int Time_Sequence;
-extern volatile unsigned int current_time;
-extern volatile unsigned int last_time;
-extern unsigned char time_changed;
+extern volatile unsigned long elapsed_ms;
 
 // globals for switches
 extern unsigned char sw1_pressed;
