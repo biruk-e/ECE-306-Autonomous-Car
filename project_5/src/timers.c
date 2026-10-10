@@ -1,10 +1,20 @@
+//------------------------------------------------------------------------------
+//  Name:           timers.h
+//  Description:    This header file contains the function implenetations for configuring timer peripherals.
+//  Author:         Biruk Kebede
+//  Date:           Sep 2026
+//  IDE:            CCS
+//------------------------------------------------------------------------------
+
 #include <msp430.h>
 #include "inc/timers.h"
 #include "inc/macros.h"
 #include "inc/globals.h"
+#include "inc/ports.h"
 
 void Init_Timers() {
     Init_Timer_B0();
+    Init_Timer_B2();
     Init_Timer_B3();
 }
 
@@ -27,6 +37,25 @@ volatile unsigned long elapsed_ms = 0;
 __interrupt void Timer0_B0_ISR() {
     elapsed_ms++;
     // TB0CCTL CCIFG bit is cleared automatically by hardware
+}
+
+void Init_Timer_B2(){
+    TB2CTL = MC__STOP; // Halt timer
+    TB2CTL |= TBCLR; // Clear TB0R, clock divider logic, and count direction
+    TB2CTL |= TBSSEL__SMCLK; // Select 8 MHz SMCLK as clock input
+    TB2CTL |= ID__8; // Set clock input divider to 8 (8 MHz SMCLK / 8 = 1 MHz)
+
+    TB2EX0 |= TBIDEX__8; // Divide clock by 8 again (8 MHZ SMCLK / 8 / 8 = 125 kHz)
+    
+    TB2CCR0 = TB2CCR0_PERIOD;
+
+    TB2CCTL0 |= CCIE; // Enables interrupts for all CCRn   
+    TB2CTL |= MC__UP; // Begins timer in up mode (count to CCR0, reset, repeat)
+}
+
+#pragma vector = TIMER2_B0_VECTOR
+__interrupt void Timer2_B0_ISR() {
+    P6OUT ^= LCD_BACKLITE; // Toggle LCD Backlight
 }
 
 void Init_Timer_B3() {

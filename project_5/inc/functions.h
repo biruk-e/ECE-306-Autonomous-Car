@@ -94,7 +94,6 @@ void WriteIns(char instruction);
 void WriteData(char data);
 
 // Switches
-void Init_Switches(void);
 void switch_control(void);
 void enable_switch_SW1(void);
 void enable_switch_SW2(void);

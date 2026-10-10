@@ -1,11 +1,16 @@
 //------------------------------------------------------------------------------
 //  Name:           display.h
-//  Description:    This header file contains the function prototypes needed for updating the display.
+//  Description:    This header file contains the function prototypes for updating the display.
 //  Author:         Biruk Kebede
-//  Date:           Sep 2026
+//  Date:           Oct 2026
 //  IDE:            CCS
 //------------------------------------------------------------------------------
 #pragma once
+
+/**
+* @brief Initializes display buffer.
+*/
+void Init_Display(void);
 
 /**
  * @brief Runs in while(1) loop and handles refreshing the display.
@@ -20,3 +25,5 @@ void display_process(void);
  * @param line_4 A pointer to a character array storing line_4.
  */
 void display_edit_buffer(char* line_1, char* line_2, char* line_3, char* line_4);
+
+void display_update(void);

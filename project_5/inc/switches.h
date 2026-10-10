@@ -1,31 +1,29 @@
+//------------------------------------------------------------------------------
+//  Name:           switches.h
+//  Description:    This header file contains the function prototypes for reading switch presses.
+//  Author:         Biruk Kebede
+//  Date:           Oct 2026
+//  IDE:            CCS
+//------------------------------------------------------------------------------
+
 #pragma once
 
 /**
-@brief Initializes switch 1 related global variables to appropriate starting values
+* @brief Disables switch interrupts and initializes switches before reenabling switch interrupts.
  */
-void init_sw1();
+void Init_Switches();
 
 /**
-@brief Initializes switch 2 related global variables to appropriate starting values
+* @brief Runs in main while loop to read state of switches and handle debounce.
  */
-void init_sw2();
+void switches_process();
 
 /**
-@brief Initializes all switch related global variables to appropriate starting values
- */
- void init_switches();
-
-/**
-@brief Handles reading switch 1 presses with debouncing
+* @brief Called within switches_process and handles reading state of switch 1 and handling it's debouncing.
  */
 void sw1_process();
 
 /**
-@brief Handles reading switch 2 presses with debouncing
+* @brief Called within switches_process and handles reading state of switch 2 and handling it's debouncing.
  */
- void sw2_process();
-
-/**
-@brief Handles reading all switch presses with debouncing
- */
- void switches_process();
+void sw2_process();

@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------
 //  Name:           ports.c
-//  Description:    This source file contains the functions used to write to the registers of
+//  Description:    This source file contains the function implementations for writing to the registers of
 //                  of the MSP430 to initialize the ports and pins upon startup.
 //  Author:         Biruk Kebede
 //  Date:           Sep 2026
@@ -63,6 +63,9 @@ void Init_Port2(void) {
     P2OUT   |= SW2;   // Set P2OUT.3 -- Select pull-up resistor
     P2REN   |= SW2;   // Set P2REN.3 -- Enable PUPD resistor
     P2DIR   &= ~SW2;  // Clear P2DIR.3 -- Configure P2.3 as input
+    P2IES   |= SW2;
+    P2IFG   &= ~SW2;
+    P2IE    |= SW2;
 
     // LFX crystal configuration 1: P2.6
     P2SEL0 &= ~LFXIN;
@@ -104,6 +107,9 @@ void Init_Port4(void) {
     P4OUT   |= SW1;   // Set P4OUT.1 -- Select pull-up resistor
     P4REN   |= SW1;   // Set P4REN.1 -- Enable PUPD resistor
     P4DIR   &= ~SW1;  // Clear P4DIR.1 -- Configure P4.1 as input
+    P4IES   |= SW1;
+    P4IFG   &= ~SW1;
+    P4IE    |= SW1;
 
     // UCB1_CS_LCD Configuration: P4.4
     P4SEL0 &= ~UCB1_CS_LCD;  // Clear P4SEL0.4 -- Select GPIO mode

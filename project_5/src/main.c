@@ -9,6 +9,7 @@
 #include  "inc\switches.h"
 #include  "inc\wheels.h"
 #include  "inc\timers.h"
+#include  "inc\display.h"
 
 void main(void){
 
@@ -19,12 +20,13 @@ void main(void){
   Init_Conditions();
   Init_Timers();
   Init_LCD();
+  Init_Switches();
+  Init_Display();
 
   while(ALWAYS) {
     display_process();
-    //time_process();
-    //wheels_process();
-    //switches_process();
+    switches_process();
+    display_update();
   }
 }
 

@@ -1,6 +1,7 @@
 //------------------------------------------------------------------------------
 //  Name:           globals.h
-//  Description:    
+//  Description:    This header file contains all the global variable declarations in this program. They are    
+//                  initialized with values in their respective .c files.
 //  Author:         Biruk Kebede
 //  Date:           Sep 2026
 //  IDE:            CCS
@@ -14,23 +15,17 @@ extern char *display[4];
 extern unsigned char display_mode;
 extern volatile unsigned char display_changed;
 extern volatile unsigned char update_display;
+extern volatile unsigned long last_update_display_time;
 extern volatile unsigned int update_display_count;
 
 // globals for time
 extern volatile unsigned long elapsed_ms;
 
 // globals for switches
-extern unsigned char sw1_pressed;
-extern unsigned char sw1_not_pressed;
-extern unsigned char sw1_level; // used in state machine to see the state of sw1
-extern unsigned int sw1_debounce_count;
-extern unsigned int sw1_release_count;
-
-extern unsigned char sw2_pressed;
-extern unsigned char sw2_not_pressed;
-extern unsigned char sw2_level; // used in state machine to see the state of sw2
-extern unsigned int sw2_debounce_count;
-extern unsigned int sw2_release_count;
+extern volatile unsigned char sw1_pressed;
+extern volatile unsigned long sw1_pressed_time;
+extern volatile unsigned long sw2_pressed_time;
+extern volatile unsigned char sw2_pressed_;
 
 // globals for wheels
 extern unsigned int wheels_counter;

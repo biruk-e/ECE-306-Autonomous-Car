@@ -1,8 +1,8 @@
 //------------------------------------------------------------------------------
 //  Name:           display.h
-//  Description:    This source file contains the function implementation needed for updating the display.
+//  Description:    This source file contains the function implementations for updating the display.
 //  Author:         Biruk Kebede
-//  Date:           Sep 2026
+//  Date:           Oct 2026
 //  IDE:            CCS
 //------------------------------------------------------------------------------
 
@@ -12,6 +12,11 @@
 #include  "inc\globals.h"
 #include "inc\display.h"
 #include <string.h>
+#include "inc/ports.h"
+
+void Init_Display() {
+  display_edit_buffer("  BLINK!  ", "          ", "          ", "          ");
+}
 
 void display_process(void){
   if(update_display){
@@ -29,4 +34,12 @@ void display_edit_buffer(char* line_1, char* line_2, char* line_3, char* line_4)
   strcpy(display_line[2], line_3);
   strcpy(display_line[3], line_4);
   display_changed = TRUE;
+}
+
+volatile unsigned long last_update_display_time = 0;
+void display_update() {
+  if (elapsed_ms - last_update_display_time >= 200) {
+    update_display = 1;
+    last_update_display_time = elapsed_ms;
+  }
 }

@@ -17,7 +17,7 @@
 #define GPIO_LOW                (0x00)
 
 // Switches related macros
-#define SWITCH_DEBOUNCE_TIME    (((20UL * 10UL) + 63UL) / 64UL)
+#define SWITCH_DEBOUNCE_TIME    (2000)
 
 // Wheels related macros
 #define DONE                    (0x01)
@@ -36,5 +36,6 @@
 #define ONE_CCW_CIRCLE_TIME     (3400)
 
 // Timer related macros
-#define TB0CCR0_PERIOD          (125 - 1) // Achieves a 1 ms tick time together with ID__8 and TBIDEX__8    
+#define TB0CCR0_PERIOD          (125 - 1) // Achieves a 1 ms tick time from SMCLK together with ID__8 and TBIDEX__8    
 #define TB3CCR0_PERIOD          (100)
+#define TB2CCR0_PERIOD          (50000)   // Achieves a 200 ms tick time from SMCLK together with ID__8 and TBIDEX__8

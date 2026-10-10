@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 //  Name:           ports.h
-//  Description:    This header file contains the macros needed for configuring the ports on the MSP430
-//                  as well as the function declarations for initalizing ports upon startup.                    
+//  Description:    This header file contains the macrosa and function prototypes for configuring the ports 
+//                  on the MSP430 as well as the function declarations for initalizing ports upon startup.                    
 //  Author:         Biruk Kebede
 //  Date:           Sep 2026
 //  IDE:            CCS
